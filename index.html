@@ -1,0 +1,607 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Serene Path Labs — Precision you can feel</title>
+  <meta name="description" content="Elite, trustworthy pathology services with easy online appointment booking, transparent pricing, and patient-first care." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='96' viewBox='0 0 96 96'%3E%3Ccircle cx='48' cy='48' r='44' fill='%23039be5'/%3E%3Cpath d='M48 18c8 8 12 14 12 20 0 8-6 14-12 14s-12-6-12-14c0-6 4-12 12-20z' fill='%23fff'/%3E%3C/svg%3E">
+<style>
+/* ---------- Header / Nav ---------- */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(3,155,229,0.08);
+}
+.nav-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 12px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #073346;
+  font-weight: 700;
+}
+.nav-logo svg {
+  margin-right: 8px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.nav-links a {
+margin:0 10px; 
+color:#0b2b3c; 
+text-decoration:none; 
+padding:8px 10px; 
+border-radius:8px; 
+transition:all .3s ease; 
+}
+.nav-links a:hover {
+  background: #e9f7ff;
+}
+
+/* ---------- Mobile Menu ---------- */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 28px;
+  height: 20px;
+  cursor: pointer;
+}
+.hamburger div {
+  height: 3px;
+  background: #0b2b3c;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: white;
+    flex-direction: column;
+    width: 200px;
+    padding: 10px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+  }
+  .nav-links.active {
+    transform: translateX(0);
+  }
+  .hamburger {
+    display: flex;
+  }
+}
+</style>
+</head>
+<body style="margin:0; font-family: Inter, -apple-system, Segoe UI, Roboto, Helvetica, Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; color:#0b2b3c; background:linear-gradient(180deg,#f5fbff 0%, #ffffff 100%); scroll-behavior:smooth;">
+
+    <!-- Top subtle progress bar -->
+  <div id="progress" aria-hidden="true"
+       style="position:fixed; top:0; left:0; height:3px; width:0%; background:linear-gradient(90deg,#00bcd4,#4dd0e1); box-shadow:0 0 8px rgba(0,188,212,0.5); z-index:1000; transition:width 0.2s ease;"></div>
+
+ <header>
+  <div class="nav-container">
+    <a href="#" class="nav-logo">
+      <svg width="28" height="28" viewBox="0 0 96 96">
+        <circle cx="48" cy="48" r="44" fill="#039be5"></circle>
+        <path d="M48 18c8 8 12 14 12 20 0 8-6 14-12 14s-12-6-12-14c0-6 4-12 12-20z" fill="#fff"></path>
+      </svg>
+      Metro Pathology Lab
+    </a>
+	<nav class="nav-links" id="nav-links">
+   <a href="#services">Services</a>
+      <a href="#booking">Book</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+        <a href="#booking" style="margin-left:12px; text-decoration:none; background:linear-gradient(90deg,#00bcd4,#4dd0e1); color:white; padding:10px 16px; border-radius:12px; box-shadow:0 8px 24px rgba(0,188,212,0.25); transition:transform .2s ease, box-shadow .2s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 12px 30px rgba(0,188,212,0.35)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 24px rgba(0,188,212,0.25)';">Book a test</a>
+	</nav>
+    <div class="hamburger" id="hamburger">
+      <div></div><div></div><div></div>
+    </div>
+  </div>
+</header>
+
+  <!-- Hero -->
+  <section id="top" style="position:relative; overflow:hidden;">
+    <div style="max-width:1100px; margin:0 auto; padding:64px 16px 24px; display:grid; grid-template-columns:1.1fr 0.9fr; gap:24px; align-items:center;">
+      <div data-animate style="opacity:0; transform:translateY(12px); transition:opacity .8s ease, transform .8s ease;">
+        <h1 style="margin:0 0 10px; font-size:44px; line-height:1.15; letter-spacing:-0.5px; color:#062b3a;">Pathology, perfected for peace of mind.</h1>
+        <p style="margin:0 0 18px; font-size:18px; color:#35576a;">From sample to report, every step is transparent, precise, and patient-first. Book in minutes, track easily, and get results you can trust.</p>
+        <div style="display:flex; gap:12px; flex-wrap:wrap;">
+          <a href="#booking" style="text-decoration:none; background:linear-gradient(90deg,#00bcd4,#4dd0e1); color:white; padding:12px 18px; border-radius:12px; box-shadow:0 10px 28px rgba(0,188,212,0.25); transition:transform .2s ease, box-shadow .2s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 16px 36px rgba(0,188,212,0.35)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 28px rgba(0,188,212,0.25)';">Book now</a>
+          <a href="#services" style="text-decoration:none; background:#e9f7ff; color:#0b2b3c; padding:12px 18px; border-radius:12px; transition:transform .2s ease;" onmouseover="this.style.transform='translateY(-2px)';" onmouseout="this.style.transform='translateY(0)';">See pricing</a>
+        </div>
+        <div style="display:flex; gap:18px; margin-top:20px; color:#406276;">
+          <div style="display:flex; align-items:center; gap:8px;"><span aria-hidden="true" style="font-size:18px;">🧪</span><span>Calibrated daily</span></div>
+          <div style="display:flex; align-items:center; gap:8px;"><span aria-hidden="true" style="font-size:18px;">🔒</span><span>Secure & private</span></div>
+          <div style="display:flex; align-items:center; gap:8px;"><span aria-hidden="true" style="font-size:18px;">⚡</span><span>Same-day reports*</span></div>
+        </div>
+      </div>
+
+      <!-- Decorative animated SVG -->
+      <div data-animate style="opacity:0; transform:translateY(12px); transition:opacity .8s ease .1s, transform .8s ease .1s; position:relative;">
+        <div style="position:relative; background:#ffffff; border:1px solid rgba(3,155,229,0.12); border-radius:20px; padding:18px; box-shadow:0 12px 40px rgba(7,51,70,0.08);">
+          <svg viewBox="0 0 300 240" width="100%" height="auto" aria-hidden="true">
+            <defs>
+              <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+                <stop offset="0%" stop-color="#00bcd4" stop-opacity="0.9"></stop>
+                <stop offset="100%" stop-color="#4dd0e1" stop-opacity="0.8"></stop>
+              </linearGradient>
+            </defs>
+            <circle cx="70" cy="120" r="48" fill="url(#g)">
+              <animate attributeName="cx" values="70;90;70" dur="8s" repeatCount="indefinite"></animate>
+            </circle>
+            <rect x="160" y="70" rx="16" ry="16" width="90" height="90" fill="#e6faff">
+              <animate attributeName="y" values="70;85;70" dur="6s" repeatCount="indefinite"></animate>
+            </rect>
+            <circle cx="210" cy="180" r="10" fill="#00bcd4">
+              <animateTransform attributeName="transform" attributeType="XML" type="scale" values="1;1.2;1" dur="3s" repeatCount="indefinite"></animateTransform>
+            </circle>
+          </svg>
+          <div style="position:absolute; inset:auto 16px 16px auto; background:#f2feff; border:1px solid #bceef5; color:#0b2b3c; padding:8px 12px; border-radius:12px; font-size:13px; box-shadow:0 8px 20px rgba(0,188,212,0.15);">Nurturing precision daily</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quick appointment floating -->
+    <div id="quick" style="position:relative; max-width:1100px; margin:0 auto; padding:0 16px 40px;">
+      <form id="quickForm" aria-label="Quick appointment" style="display:flex; gap:10px; flex-wrap:wrap; align-items:center; background:#ffffff; border:1px solid rgba(3,155,229,0.12); box-shadow:0 10px 28px rgba(7,51,70,0.06); border-radius:16px; padding:12px;">
+        <div style="flex:1 1 220px;">
+          <label for="quickTest" style="display:block; font-size:13px; color:#35576a; margin-bottom:6px;">Select test</label>
+          <select id="quickTest" required style="width:90%; padding:12px 12px; border-radius:10px; border:1px solid #cfe9f3; background:#f9feff; color:#0b2b3c; outline:none;">
+            <option value="">Choose a test</option>
+            <option>CBC</option>
+            <option>Lipid Profile</option>
+            <option>Liver Function Test</option>
+            <option>HbA1c</option>
+            <option>Vitamin D</option>
+          </select>
+        </div>
+        <div style="flex:1 1 180px;">
+          <label for="quickPhone" style="display:block; font-size:13px; color:#35576a; margin-bottom:6px;">Phone</label>
+          <input id="quickPhone" type="tel" placeholder="e.g., 98XXXXXXXX" required pattern="[0-9]{10}" style="width:90%; padding:12px 12px; border-radius:10px; border:1px solid #cfe9f3; background:#f9feff; color:#0b2b3c; outline:none;" />
+        </div>
+        <div style="flex:0 0 auto; display:flex; gap:10px;">
+          <button type="submit" style="cursor:pointer; border:none; background:linear-gradient(90deg,#00bcd4,#4dd0e1); color:white; padding:12px 16px; border-radius:12px; box-shadow:0 10px 28px rgba(0,188,212,0.22); transition:transform .2s ease, box-shadow .2s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 14px 34px rgba(0,188,212,0.3)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 28px rgba(0,188,212,0.22)';">Quick book</button>
+          <a href="#booking" style="display:inline-flex; align-items:center; text-decoration:none; color:#0b2b3c; background:#e9f7ff; padding:12px 16px; border-radius:12px;">Go to full form</a>
+        </div>
+      </form>
+      <div id="quickMsg" role="status" aria-live="polite" style="margin-top:8px; font-size:13px; color:#2e7d32; display:none;">Thanks! We’ll call to confirm your slot.</div>
+    </div>
+  </section>
+
+  <!-- Services & Pricing -->
+  <section id="services" style="max-width:1100px; margin:0 auto; padding:28px 16px 10px;">
+    <div data-animate style="opacity:0; transform:translateY(12px); transition:opacity .8s ease, transform .8s ease;">
+      <h2 style="margin:0 0 8px; font-size:28px;">Transparent services & pricing</h2>
+      <p style="margin:0 0 18px; color:#406276;">No surprises—clear prices and preparation tips at a glance.</p>
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:16px;">
+      <!-- Card -->
+      <article data-animate style="opacity:0; transform:translateY(12px); transition:opacity .8s ease .05s, transform .8s ease .05s; background:#ffffff; border:1px solid rgba(3,155,229,0.12); border-radius:16px; padding:16px; box-shadow:0 8px 24px rgba(7,51,70,0.06);">
+        <h3 style="margin:0 0 6px; font-size:18px;">Complete Blood Count (CBC)</h3>
+        <p style="margin:0 0 10px; color:#406276; font-size:14px;">Screen infections, anemia, and overall health.</p>
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <strong style="color:#073346;">₹ 300</strong>
+          <button onclick="prefillTest('CBC')" style="cursor:pointer; border:1px solid #b6eaf2; background:#e9f7ff; color:#0b2b3c; padding:8px 12px; border-radius:10px;">Book</button>
+        </div>
+      </article>
+
+      <article data-animate style="opacity:0; transform:translateY(12px); transition:opacity .8s ease .1s, transform .8s ease .1s; background:#ffffff; border:1px solid rgba(3,155,229,0.12); border-radius:16px; padding:16px; box-shadow:0 8px 24px rgba(7,51,70,0.06);">
+        <h3 style="margin:0 0 6px; font-size:18px;">Lipid Profile</h3>
+        <p style="margin:0 0 10px; color:#406276; font-size:14px;">Check cholesterol and heart risk markers.</p>
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <strong style="color:#073346;">₹ 900</strong>
+          <button onclick="prefillTest('Lipid Profile')" style="cursor:pointer; border:1px solid #b6eaf2; background:#e9f7ff; color:#0b2b3c; padding:8px 12px; border-radius:10px;">Book</button>
+        </div>
+      </article>
+
+      <article data-animate style="opacity:0; transform:translateY(12px); transition:opacity .8s ease .15s, transform .8s ease .15s; background:#ffffff; border:1px solid rgba(3,155,229,0.12); border-radius:16px; padding:16px; box-shadow:0 8px 24px rgba(7,51,70,0.06);">
+        <h3 style="margin:0 0 6px; font-size:18px;">Liver Function Test (LFT)</h3>
+        <p style="margin:0 0 10px; color:#406276; font-size:14px;">Assess liver health and enzyme levels.</p>
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <strong style="color:#073346;">₹ 1200</strong>
+          <button onclick="prefillTest('Liver Function Test')" style="cursor:pointer; border:1px solid #b6eaf2; background:#e9f7ff; color:#0b2b3c; padding:8px 12px; border-radius:10px;">Book</button>
+        </div>
+      </article>
+
+      <article data-animate style="opacity:0; transform:translateY(12px); transition:opacity .8s ease .2s, transform .8s ease .2s; background:#ffffff; border:1px solid rgba(3,155,229,0.12); border-radius:16px; padding:16px; box-shadow:0 8px 24px rgba(7,51,70,0.06);">
+        <h3 style="margin:0 0 6px; font-size:18px;">HbA1c</h3>
+        <p style="margin:0 0 10px; color:#406276; font-size:14px;">Understand your 3-month blood sugar trend.</p>
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <strong style="color:#073346;">₹ 600</strong>
+          <button onclick="prefillTest('HbA1c')" style="cursor:pointer; border:1px solid #b6eaf2; background:#e9f7ff; color:#0b2b3c; padding:8px 12px; border-radius:10px;">Book</button>
+        </div>
+      </article>
+
+      <article data-animate style="opacity:0; transform:translateY(12px); transition:opacity .8s ease .25s, transform .8s ease .25s; background:#ffffff; border:1px solid rgba(3,155,229,0.12); border-radius:16px; padding:16px; box-shadow:0 8px 24px rgba(7,51,70,0.06);">
+        <h3 style="margin:0 0 6px; font-size:18px;">Vitamin D (25-OH)</h3>
+        <p style="margin:0 0 10px; color:#406276; font-size:14px;">Detect deficiency and guide supplementation.</p>
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <strong style="color:#073346;">₹ 1500</strong>
+          <button onclick="prefillTest('Vitamin D')" style="cursor:pointer; border:1px solid #b6eaf2; background:#e9f7ff; color:#0b2b3c; padding:8px 12px; border-radius:10px;">Book</button>
+        </div>
+      </article>
+
+      <article data-animate style="opacity:0; transform:translateY(12px); transition:opacity .8s ease .3s, transform .8s ease .3s; background:#ffffff; border:1px solid rgba(3,155,229,0.12); border-radius:16px; padding:16px; box-shadow:0 8px 24px rgba(7,51,70,0.06);">
+        <h3 style="margin:0 0 6px; font-size:18px;">Thyroid Profile (T3, T4, TSH)</h3>
+        <p style="margin:0 0 10px; color:#406276; font-size:14px;">Evaluate thyroid function accurately.</p>
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <strong style="color:#073346;">₹ 700</strong>
+          <button onclick="prefillTest('Thyroid Profile')" style="cursor:pointer; border:1px solid #b6eaf2; background:#e9f7ff; color:#0b2b3c; padding:8px 12px; border-radius:10px;">Book</button>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Booking -->
+  <section id="booking" style="max-width:1100px; margin:0 auto; padding:28px 16px;">
+    <div data-animate style="opacity:0; transform:translateY(12px); transition:opacity .8s ease, transform .8s ease;">
+      <h2 style="margin:0 0 8px; font-size:28px;">Book your appointment</h2>
+      <p style="margin:0 0 18px; color:#406276;">Choose a convenient slot. Working hours: 8:00 AM – 8:00 PM.</p>
+    </div>
+
+    <form id="bookingForm" novalidate style="background:#ffffff; border:1px solid rgba(3,155,229,0.12); border-radius:16px; box-shadow:0 10px 28px rgba(7,51,70,0.06); padding:16px; display:grid; grid-template-columns:repeat(2,1fr); gap:16px;">
+      <div>
+        <label for="name" style="display:block; font-size:13px; color:#35576a; margin-bottom:6px;">Full name</label>
+        <input id="name" name="name" type="text" required placeholder="Your name" style="width:90%; padding:12px; border-radius:10px; border:1px solid #cfe9f3; background:#f9feff; color:#0b2b3c; outline:none;">
+      </div>
+      <div>
+        <label for="phone" style="display:block; font-size:13px; color:#35576a; margin-bottom:6px;">Phone</label>
+        <input id="phone" name="phone" type="tel" required pattern="[0-9]{10}" placeholder="10-digit number" style="width:90%; padding:12px; border-radius:10px; border:1px solid #cfe9f3; background:#f9feff; color:#0b2b3c; outline:none;">
+      </div>
+      <div>
+        <label for="email" style="display:block; font-size:13px; color:#35576a; margin-bottom:6px;">Email (optional)</label>
+        <input id="email" name="email" type="email" placeholder="you@example.com" style="width:90%; padding:12px; border-radius:10px; border:1px solid #cfe9f3; background:#f9feff; color:#0b2b3c; outline:none;">
+      </div>
+      <div>
+        <label for="test" style="display:block; font-size:13px; color:#35576a; margin-bottom:6px;">Select test</label>
+        <select id="test" name="test" required style="width:90%; padding:12px; border-radius:10px; border:1px solid #cfe9f3; background:#f9feff; color:#0b2b3c; outline:none;">
+          <option value="">Choose a test</option>
+          <option>CBC</option>
+          <option>Lipid Profile</option>
+          <option>Liver Function Test</option>
+          <option>HbA1c</option>
+          <option>Vitamin D</option>
+          <option>Thyroid Profile</option>
+        </select>
+      </div>
+      <div>
+        <label for="date" style="display:block; font-size:13px; color:#35576a; margin-bottom:6px;">Preferred date</label>
+        <input id="date" name="date" type="date" required style="width:90%; padding:12px; border-radius:10px; border:1px solid #cfe9f3; background:#f9feff; color:#0b2b3c; outline:none;">
+        <small id="dateHelp" style="display:block; margin-top:6px; color:#406276;">Past dates are disabled.</small>
+      </div>
+      <div>
+        <label for="time" style="display:block; font-size:13px; color:#35576a; margin-bottom:6px;">Preferred time</label>
+        <input id="time" name="time" type="time" required step="300" style="width:90%; padding:12px; border-radius:10px; border:1px solid #cfe9f3; background:#f9feff; color:#0b2b3c; outline:none;">
+        <small id="timeHelp" style="display:block; margin-top:6px; color:#406276;">Slots available only between 08:00 and 20:00. Today’s past time is disabled.</small>
+      </div>
+      <div>
+        <label for="pickup" style="display:block; font-size:13px; color:#35576a; margin-bottom:6px;">Home sample pickup</label>
+        <select id="pickup" name="pickup" style="width:90%; padding:12px; border-radius:10px; border:1px solid #cfe9f3; background:#f9feff; color:#0b2b3c; outline:none;">
+          <option>No</option>
+          <option>Yes</option>
+        </select>
+      </div>
+      <div>
+        <label for="address" style="display:block; font-size:13px; color:#35576a; margin-bottom:6px;">Address (if pickup)</label>
+        <input id="address" name="address" type="text" placeholder="Flat, street, landmark, city" style="width:90%; padding:12px; border-radius:10px; border:1px solid #cfe9f3; background:#f9feff; color:#0b2b3c; outline:none;">
+      </div>
+      <div style="grid-column:1 / -1;">
+        <label for="notes" style="display:block; font-size:13px; color:#35576a; margin-bottom:6px;">Notes (fasting hours, doctor, etc.)</label>
+        <textarea id="notes" name="notes" rows="3" style="width:90%; padding:12px; border-radius:10px; border:1px solid #cfe9f3; background:#f9feff; color:#0b2b3c; outline:none;"></textarea>
+      </div>
+      <div style="grid-column:1 / -1; display:flex; gap:12px; align-items:center;">
+        <button type="submit" style="cursor:pointer; border:none; background:linear-gradient(90deg,#00bcd4,#4dd0e1); color:white; padding:12px 18px; border-radius:12px; box-shadow:0 10px 28px rgba(0,188,212,0.22); transition:transform .2s ease, box-shadow .2s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 14px 34px rgba(0,188,212,0.3)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 28px rgba(0,188,212,0.22)';">Confirm booking</button>
+        <div id="formMsg" role="status" aria-live="polite" style="color:#2e7d32;"></div>
+      </div>
+    </form>
+  </section>
+
+  <!-- About -->
+  <section id="about" style="max-width:1100px; margin:0 auto; padding:20px 16px;">
+    <div data-animate style="opacity:0; transform:translateY(12px); transition:opacity .8s ease, transform .8s ease;">
+      <h2 style="margin:0 0 8px; font-size:28px;">About us</h2>
+      <p style="margin:0 0 10px; color:#406276;">At Metro Pathology Lab, trust isn’t a claim—it’s a practice. From sterile collection to double-verified reporting, we design every detail to feel calm, clear, and human. Our team believes precision and kindness belong together.</p>
+      <ul style="margin:10px 0; padding-left:18px; color:#35576a;">
+        <li>Patient-first design—clear instructions, gentle reminders, real humans.</li>
+        <li>Quality controls daily; equipment maintained to stringent standards.</li>
+        <li>Digital-first experience—secure reports, easy access, transparent timelines.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" style="max-width:1100px; margin:0 auto; padding:20px 16px 40px;">
+    <div data-animate style="opacity:0; transform:translateY(12px); transition:opacity .8s ease, transform .8s ease;">
+      <h2 style="margin:0 0 8px; font-size:28px;">Contact us</h2>
+      <div style="display:grid; grid-template-columns:1fr 1.2fr; gap:16px;">
+        <div style="background:#ffffff; border:1px solid rgba(3,155,229,0.12); border-radius:16px; padding:16px; box-shadow:0 8px 24px rgba(7,51,70,0.06);">
+          <p style="margin:6px 0; color:#406276;"><strong style="color:#073346;">Address:</strong> <a style="text-decoration: none; color: #073346" href="https://maps.app.goo.gl/MyAMjPT9ocZcSiLs9" target="_blank">
+  Building No 2/001, Shankheshwar Kiran, Near Poddar International School, Wayle Nagar, Khadakpada, Kalyan (W), Maharashtra - 421301</a></p>
+          <p style="margin:6px 0; color:#406276;"><strong style="color:#073346;">Phone:</strong><a style="text-decoration: none; color: #073346" href="https://wa.me/917506092415?text=Hi%20Metro%20Pathology%20Lab%2C%20I%27d%20like%20to%20book%20a%20test" target="_blank"> +91‑7506092415</a></p>
+          <p style="margin:6px 0; color:#406276;"><strong style="color:#073346;">Email:</strong> <a style="text-decoration: none; color: #073346" href="https://mail.google.com/mail/?view=cm&fs=1&to=metropathology7506@gmail.com&su=Test%20Booking%20Request&body=Hello%2C%20I%20would%20like%20to%20book%20a%20test" target="_blank"> metropathology7506@gmail.com</a></p>
+          <p style="margin:6px 0; color:#406276;"><strong style="color:#073346;">Hours:</strong> 8:00 AM – 8:00 PM, All days</p>
+          <a href="#booking" style="display:inline-block; margin-top:10px; text-decoration:none; background:#e9f7ff; color:#0b2b3c; padding:10px 14px; border-radius:10px;">Book an appointment</a>
+        </div>
+        <div style="border-radius:16px; overflow:hidden; border:1px solid rgba(3,155,229,0.12); box-shadow:0 8px 24px rgba(7,51,70,0.06);">
+          <iframe title="Metro Pathology Lab location" width="100%" height="320" style="border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d3187.897282030119!2d73.13062617520985!3d19.255244481986576!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x3be797b18701453d%3A0x87e36c7599fafea1!2sBuilding%20No%202%2F001%2C%20METRO%20PATHOLOGY%20LAB%2C%20Shankheshwar%20Kiran%2C%20near%20Poddar%20International%20School%2C%20Wayle%20Nagar%2C%20Gandhar%20Nagar%2C%20Khadakpada%2C%20Kalyan%2C%20Maharashtra%20421301!3m2!1d19.254654199999997!2d73.1331857!5e1!3m2!1sen!2sin!4v1756371521326!5m2!1sen!2sin"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer style="background:#f7fdff; border-top:1px solid rgba(3,155,229,0.08);">
+    <div style="max-width:1100px; margin:0 auto; padding:18px 16px; display:grid; grid-template-columns:1.2fr 1fr 1fr; gap:16px; align-items:start;">
+      <div>
+        <div style="display:flex; align-items:center; margin-bottom:8px;">
+          <svg width="28" height="28" viewBox="0 0 96 96" aria-hidden="true" style="margin-right:8px;">
+            <circle cx="48" cy="48" r="44" fill="#039be5"></circle>
+            <path d="M48 18c8 8 12 14 12 20 0 8-6 14-12 14s-12-6-12-14c0-6 4-12 12-20z" fill="#fff"></path>
+          </svg>
+          <strong style="color:#073346;">Metro Pathology Lab</strong>
+        </div>
+        <p style="margin:4px 0; color:#406276;"><a style="text-decoration: none; color: #073346" href="https://maps.app.goo.gl/MyAMjPT9ocZcSiLs9" target="_blank">
+  Building No 2/001, Shankheshwar Kiran, Near Poddar International School, Wayle Nagar, Khadakpada, Kalyan (W), Maharashtra - 421301</a></p>
+<br>
+        <p style="margin:4px 0; color:#406276;">© <span id="year"></span> Metro Pathology Lab. All rights reserved.</p>
+      </div>
+      <div>
+        <strong style="color:#073346;">Opening hours</strong>
+        <p style="margin:6px 0; color:#406276;">Daily: 8:00 AM – 8:00 PM</p> <br>
+        <strong style="color:#073346;">WhatsApp Us</strong>
+        <p style="margin:6px 0; color:#406276;"><a style="text-decoration: none; color: #073346" href="https://wa.me/917506092415?text=Hi%20Metro%20Pathology%20Lab%2C%20I%27d%20like%20to%20book%20a%20test" target="_blank"> +91‑7506092415</a></p>
+      </div>
+      <div>
+        <strong style="color:#073346;">Quick links</strong>
+        <div style="display:flex; flex-direction:column;">
+          <a href="#services" style="color:#0b2b3c; text-decoration:none; margin:6px 0;">Services</a>
+          <a href="#booking" style="color:#0b2b3c; text-decoration:none; margin:6px 0;">Book appointment</a>
+          <a href="#about" style="color:#0b2b3c; text-decoration:none; margin:6px 0;">About</a>
+          <a href="#contact" style="color:#0b2b3c; text-decoration:none; margin:6px 0;">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts: animations, validation, Firebase hook points -->
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+// Mobile nav toggle
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('nav-links');
+hamburger.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+  hamburger.classList.toggle('open');
+});
+
+// Optional: close menu when a link is clicked
+navLinks.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('active');
+    hamburger.classList.remove('open');
+  });
+});
+
+    // Scroll progress
+    window.addEventListener('scroll', () => {
+      const h = document.documentElement;
+      const scrolled = (h.scrollTop) / (h.scrollHeight - h.clientHeight);
+      document.getElementById('progress').style.width = (scrolled * 100) + '%';
+    });
+
+    // Reveal animations
+    const reveal = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.style.opacity = 1;
+          e.target.style.transform = 'translateY(0)';
+          reveal.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('[data-animate]').forEach(el => reveal.observe(el));
+
+    // Booking constraints
+    const OPEN_HOUR = 8;     // 08:00
+    const CLOSE_HOUR = 20;   // 20:00
+    const dateInput = document.getElementById('date');
+    const timeInput = document.getElementById('time');
+    const dateHelp = document.getElementById('dateHelp');
+    const timeHelp = document.getElementById('timeHelp');
+
+    function toDateString(d) {
+      const y = d.getFullYear();
+      const m = String(d.getMonth() + 1).padStart(2, '0');
+      const day = String(d.getDate()).padStart(2, '0');
+      return `${y}-${m}-${day}`;
+    }
+
+    function todayLocalMidnight() {
+      const t = new Date();
+      t.setHours(0, 0, 0, 0);
+      return t;
+    }
+
+    function setMinDateToday() {
+      const today = todayLocalMidnight();
+      dateInput.min = toDateString(today);
+      if (!dateInput.value) dateInput.value = dateInput.min;
+    }
+
+    function clampToWorkingHours(h, m) {
+      // returns {h, m} clamped to 08:00-20:00
+      if (h < OPEN_HOUR) return { h: OPEN_HOUR, m: 0 };
+      if (h > CLOSE_HOUR) return { h: CLOSE_HOUR, m: 0 };
+      if (h === CLOSE_HOUR && m > 0) return { h: CLOSE_HOUR, m: 0 };
+      return { h, m };
+    }
+
+    function roundUpMinutes(mins, step = 5) {
+      return Math.ceil(mins / step) * step;
+    }
+
+    function updateTimeLimits() {
+      const now = new Date();
+      const todayStr = toDateString(todayLocalMidnight());
+      // If date is empty or < today, set to today
+      if (!dateInput.value || dateInput.value < todayStr) {
+        dateInput.value = todayStr;
+      }
+
+      if (dateInput.value === todayStr) {
+        // If past closing, move to tomorrow at 08:00
+        if (now.getHours() > CLOSE_HOUR || (now.getHours() === CLOSE_HOUR && now.getMinutes() > 0)) {
+          const tomorrow = new Date(now);
+          tomorrow.setDate(tomorrow.getDate() + 1);
+          dateInput.value = toDateString(tomorrow);
+          timeInput.min = '08:00';
+          timeInput.max = '20:00';
+          timeInput.value = '08:00';
+          dateHelp.textContent = 'Today’s slots are closed. Showing next available day.';
+          return;
+        }
+        // Today: min is max(now, open), rounded up
+        let minH = Math.max(now.getHours(), OPEN_HOUR);
+        let minM = now.getHours() < OPEN_HOUR ? 0 : roundUpMinutes(now.getMinutes() + 1, 5);
+        if (minM >= 60) { minH += 1; minM = 0; }
+        let clamped = clampToWorkingHours(minH, minM);
+        let minStr = `${String(clamped.h).padStart(2, '0')}:${String(clamped.m).padStart(2, '0')}`;
+        // If min == 20:00, there are no slots left; move to tomorrow
+        if (minStr >= '20:00') {
+          const tomorrow = new Date(now);
+          tomorrow.setDate(tomorrow.getDate() + 1);
+          dateInput.value = toDateString(tomorrow);
+          minStr = '08:00';
+          dateHelp.textContent = 'Today’s slots are closed. Showing next available day.';
+        } else {
+          dateHelp.textContent = 'Past dates are disabled.';
+        }
+        timeInput.min = minStr;
+        timeInput.max = '20:00';
+        if (!timeInput.value || timeInput.value < timeInput.min || timeInput.value > timeInput.max) {
+          timeInput.value = timeInput.min;
+        }
+        timeHelp.textContent = `Today available: ${timeInput.min} – 20:00`;
+      } else {
+        // Future day: full hours
+        timeInput.min = '08:00';
+        timeInput.max = '20:00';
+        timeHelp.textContent = 'Slots available only between 08:00 and 20:00.';
+        if (!timeInput.value || timeInput.value < '08:00' || timeInput.value > '20:00') {
+          timeInput.value = '08:00';
+        }
+      }
+    }
+
+    // Initialize constraints
+    setMinDateToday();
+    updateTimeLimits();
+    dateInput.addEventListener('change', updateTimeLimits);
+    timeInput.addEventListener('change', () => {
+      // Enforce boundaries and "no past time today"
+      const todayStr = toDateString(todayLocalMidnight());
+      if (dateInput.value === todayStr && timeInput.value < timeInput.min) {
+        timeInput.value = timeInput.min;
+      }
+      if (timeInput.value > timeInput.max) {
+        timeInput.value = timeInput.max;
+      }
+    });
+
+    // Quick booking: scroll to full form and prefill
+    function prefillTest(name) {
+      document.getElementById('test').value = name;
+      document.getElementById('booking').scrollIntoView({ behavior: 'smooth' });
+    }
+    window.prefillTest = prefillTest;
+
+    document.getElementById('quickForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const test = document.getElementById('quickTest').value;
+      const phone = document.getElementById('quickPhone').value;
+      // Prefill main form
+      document.getElementById('test').value = test;
+      document.getElementById('phone').value = phone;
+      document.getElementById('booking').scrollIntoView({ behavior: 'smooth' });
+      const msg = document.getElementById('quickMsg');
+      msg.style.display = 'block';
+      setTimeout(() => msg.style.display = 'none', 2500);
+
+      // TODO: Integrate Firebase analytics event for quick intent here.
+      // e.g., send {type:'quick-intent', test, phone}
+    });
+
+    // Booking form submission
+    document.getElementById('bookingForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const form = e.target;
+      const formMsg = document.getElementById('formMsg');
+
+      // Validate again on submit
+      updateTimeLimits();
+      const d = form.date.value;
+      const t = form.time.value;
+      if (!d || !t) {
+        formMsg.style.color = '#c62828';
+        formMsg.textContent = 'Please select a valid date and time.';
+        return;
+      }
+      if (t < form.time.min || t > form.time.max) {
+        formMsg.style.color = '#c62828';
+        formMsg.textContent = `Please choose a time between ${form.time.min} and ${form.time.max}.`;
+        return;
+      }
+
+      formMsg.style.color = '#2e7d32';
+      formMsg.textContent = 'Booking confirmed. You will receive a confirmation shortly.';
+      
+      // TODO: Replace with Firebase write
+      // Example (pseudo):
+      // const payload = Object.fromEntries(new FormData(form).entries());
+      // await firebase.firestore().collection('appointments').add(payload);
+
+      form.reset();
+      setMinDateToday();
+      updateTimeLimits();
+    });
+  </script>
+
+  <!-- Responsive tweaks -->
+  <div aria-hidden="true" style="display:none;">
+    <style>
+      /* Note: Keeping animations via inline styles and SVG SMIL.
+         This tiny style block is only for responsive grid fallbacks. */
+      @media (max-width: 900px) {
+        #top > div { grid-template-columns: 1fr !important; }
+        #services > div:nth-of-type(2) { grid-template-columns: 1fr 1fr !important; }
+        #contact > div > div { grid-template-columns: 1fr !important; }
+      }
+      @media (max-width: 620px) {
+        #services > div:nth-of-type(2) { grid-template-columns: 1fr !important; }
+      }
+    </style>
+  </div>
+</body>
+</html>
